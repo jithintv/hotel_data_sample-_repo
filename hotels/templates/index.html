@@ -1,0 +1,104 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Booking Form HTML Template</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:400,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/bootstrap.min.css'%}"
+    />
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="booking" class="section">
+      <div class="section-center">
+        <div class="container">
+          <div class="row">
+            <div class="booking-form">
+              <div class="form-header">
+              </div>
+              <form method="post" class="tm-search-form tm-section-pad-2">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <span class="form-label">Destination</span>
+                      <input
+                        class="form-control"
+                        name="state"
+                        type="text"
+                        id="state"
+                        placeholder="Type your destination..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <span class="form-label">sort</span>
+                      <select
+                        name="sort"
+                        class="form-control tm-select"
+                        id="sort"
+                      >
+                        <option value="price">price</option>
+                        <option value="Rating">Rating</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <span class="form-label">Level</span>
+                      <select
+                        name="level"
+                        class="form-control tm-select"
+                        id="level"
+                      >
+                        <option value="Highest">Highest</option>
+                        <option value="average">average</option>
+                        <option value="cheapest">cheapest</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-btn">
+                  <button class="submit-btn">Check availability</button>
+                </div>
+				                <a href="upload.html">
+                  <h6>Upload your CSV file here...</h6>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
